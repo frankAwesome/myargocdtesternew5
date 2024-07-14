@@ -6,7 +6,7 @@ metadata:
     app: webui
 spec:
   ports:
-    - port: 80
+    - port: 3000
       targetPort: 80
   selector:
     app: webui
@@ -31,4 +31,4 @@ spec:
         - name: webui
           image: frankawesome/simple-angular-app:latest
           ports:
-            - containerPort: 80
+            - containerPort: 3000
