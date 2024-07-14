@@ -5,11 +5,13 @@ metadata:
   labels:
     app: webui
 spec:
+  type: LoadBalancer
   ports:
     - port: 3000
       targetPort: 80
   selector:
     app: webui
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -29,6 +31,6 @@ spec:
     spec:
       containers:
         - name: webui
-          image: frankawesome/simple-angular-app:latest
+          image: frankawesome/simple-angular-app-2:latest
           ports:
             - containerPort: 3000

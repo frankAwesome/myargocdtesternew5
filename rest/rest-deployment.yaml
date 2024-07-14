@@ -5,6 +5,7 @@ metadata:
   labels:
     app: app-rest
 spec:
+  type: LoadBalancer
   ports:
     - port: 5000
       targetPort: 5000
@@ -36,4 +37,3 @@ spec:
             - name: RABBITIP
               value: "rabbitmq"
             - name: RABBITMQ_PORT
-              value: "5672"
