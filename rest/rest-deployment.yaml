@@ -37,6 +37,3 @@ spec:
               value: "rabbitmq"
             - name: RABBITMQ_PORT
               value: "5672"
-      clusterResourceWhitelist:
-        - group: '*'
-          kind: '*'

@@ -29,9 +29,6 @@ spec:
     spec:
       containers:
         - name: webui
-          image: frankawesome/simple-angular-app:latest
+          image: frankawesome/simple-angular-app-2:latest
           ports:
             - containerPort: 80
-      clusterResourceWhitelist:
-        - group: '*'
-          kind: '*'
