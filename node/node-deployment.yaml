@@ -33,7 +33,7 @@ spec:
           ports:
             - containerPort: 8081
           env:
-            - name: RABBITMQ_HOST
+            - name: RABBITIP
               value: "rabbitmq"
             - name: RABBITMQ_PORT
               value: "5672"
