@@ -31,3 +31,6 @@ spec:
           image: rabbitmq:latest
           ports:
             - containerPort: 5672
+      clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'

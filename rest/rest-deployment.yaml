@@ -6,8 +6,8 @@ metadata:
     app: app-rest
 spec:
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 5000
+      targetPort: 5000
   selector:
     app: app-rest
 ---
@@ -31,9 +31,12 @@ spec:
         - name: app-rest
           image: frankawesome/app_rest:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 5000
           env:
-            - name: RABBITMQ_HOST
+            - name: RABBITIP
               value: "rabbitmq"
             - name: RABBITMQ_PORT
               value: "5672"
+      clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'

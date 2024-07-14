@@ -33,7 +33,10 @@ spec:
           ports:
             - containerPort: 8081
           env:
-            - name: RABBITIP
+            - name: RABBITMQ_HOST
               value: "rabbitmq"
             - name: RABBITMQ_PORT
               value: "5672"
+      clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'

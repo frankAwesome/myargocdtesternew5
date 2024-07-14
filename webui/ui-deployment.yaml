@@ -32,3 +32,6 @@ spec:
           image: frankawesome/simple-angular-app:latest
           ports:
             - containerPort: 80
+      clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
