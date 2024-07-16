@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: mssql-config
 data:
-  MSSQL_PID: "Express"  # Options: Developer, Express, Standard, Enterprise
+  MSSQL_PID: "Express"
