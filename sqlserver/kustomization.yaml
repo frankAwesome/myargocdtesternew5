@@ -1,0 +1,7 @@
+resources:
+  - sqlserver-persistent-volume.yaml
+  - sqlserver-persistent-volume-claim.yaml
+  - sqlserver-secret.yaml
+  - sqlserver-configmap.yaml
+  - sqlserver-deployment.yaml
+  - sqlserver-service.yaml
