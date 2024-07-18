@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fluentd
+  namespace: logging
+  labels:
+    app: fluentd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fluentd
+  template:
+    metadata:
+      labels:
+        app: fluentd
+    spec:
+      containers:
+        - name: fluentd
+          image: fluent/fluentd:v1.14.2-debian-1.0
+          ports:
+            - containerPort: 24224
+            - containerPort: 24224
+              protocol: UDP
+          volumeMounts:
+            - name: config-volume
+              mountPath: /fluentd/etc
+            - name: varlog
+              mountPath: /var/log
+      volumes:
+        - name: config-volume
+          configMap:
+            name: fluentd-config
+        - name: varlog
+          hostPath:
+            path: /var/log
