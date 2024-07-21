@@ -1,4 +1,4 @@
 resources:
-  - loki-configmap.yaml
   - loki-deployment.yaml
+  - loki-configmap.yaml
   - loki-service.yaml
