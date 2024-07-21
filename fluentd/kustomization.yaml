@@ -1,0 +1,4 @@
+resources:
+  - fluentd/fluentd-configmap.yaml
+  - fluentd/fluentd-deployment.yaml
+  - fluentd/fluentd-service.yaml
