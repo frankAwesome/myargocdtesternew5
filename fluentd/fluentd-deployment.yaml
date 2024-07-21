@@ -15,6 +15,13 @@ spec:
       labels:
         app: fluentd
     spec:
+      initContainers:
+        - name: install-plugins
+          image: fluent/fluentd:v1.14.2-debian-1.0
+          command: ['sh', '-c', 'gem install fluent-plugin-kubernetes_metadata_filter -v 2.5.2 --no-document && cp -r /usr/lib/ruby/gems/2.6.0/gems /fluentd/gems']
+          volumeMounts:
+            - name: plugins
+              mountPath: /fluentd
       containers:
         - name: fluentd
           image: fluent/fluentd:v1.14.2-debian-1.0
@@ -27,6 +34,8 @@ spec:
               mountPath: /fluentd/etc
             - name: varlog
               mountPath: /var/log
+            - name: plugins
+              mountPath: /usr/lib/ruby/gems/2.6.0/gems
       volumes:
         - name: config-volume
           configMap:
@@ -34,3 +43,5 @@ spec:
         - name: varlog
           hostPath:
             path: /var/log
+        - name: plugins
+          emptyDir: {}
