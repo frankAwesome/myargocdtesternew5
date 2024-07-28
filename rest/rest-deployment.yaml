@@ -30,10 +30,13 @@ spec:
     spec:
       containers:
         - name: app-rest
-          image: frankawesome/rest-llm-4:latest
+          image: frankawesome/rest-llm-5:latest
           ports:
             - containerPort: 5000
           env:
             - name: RABBITIP
               value: "rabbitmq"
-            - name: RABBITMQ_PORT
+            - name: REDIS_HOST
+              value: "redis"
+            - name: FLUENTD_HOST
+              value: "fluentd"
