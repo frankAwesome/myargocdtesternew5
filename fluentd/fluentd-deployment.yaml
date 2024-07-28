@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: fluentd
-        image: my-fluentd-1:latest
+        image: frankawesome/my-fluentd-1:latest
         env:
         - name: FLUENTD_ARGS
           value: "--no-supervisor -q"
