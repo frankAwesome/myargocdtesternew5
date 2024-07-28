@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: fluentd-config
   namespace: kube-system
-  labels:
-    app: fluentd
 data:
   fluentd.conf: |
     <source>
@@ -48,6 +46,7 @@ spec:
       labels:
         name: fluentd
     spec:
+      serviceAccountName: fluentd
       containers:
       - name: fluentd
         image: fluent/fluentd:v1.14.2-debian-1.0
@@ -64,6 +63,12 @@ spec:
           subPath: fluentd.conf
         - name: varlog
           mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+        - name: runlogjournal
+          mountPath: /run/log/journal
+          readOnly: true
       terminationGracePeriodSeconds: 30
       volumes:
       - name: config-volume
@@ -72,3 +77,9 @@ spec:
       - name: varlog
         hostPath:
           path: /var/log
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
+      - name: runlogjournal
+        hostPath:
+          path: /run/log/journal
