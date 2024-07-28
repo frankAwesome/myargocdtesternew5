@@ -82,7 +82,7 @@ spec:
       serviceAccountName: fluentd
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-elasticsearch-1.0
+        image: fluent/fluentd:v1.14.2-debian-1.0
         env:
         - name: FLUENTD_ARGS
           value: "--no-supervisor -q"
