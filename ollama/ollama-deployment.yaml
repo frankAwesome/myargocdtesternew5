@@ -20,8 +20,6 @@ spec:
         volumeMounts:
         - mountPath: /root/.ollama
           name: ollama-volume
-        command: ["/bin/sh"]
-        args: ["-c", "ollama run llama3"]
       volumes:
       - name: ollama-volume
         persistentVolumeClaim:
