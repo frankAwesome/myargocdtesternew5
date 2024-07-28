@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: app-rest
-          image: frankawesome/app_rest:latest
+          image: frankawesome/rest-llm-2:latest
           ports:
             - containerPort: 5000
           env:
