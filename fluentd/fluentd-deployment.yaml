@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: fluentd
-        image: fluent/fluentd:v1.14.2-debian-1.0
+        image: my-fluentd-1:latest
         env:
         - name: FLUENTD_ARGS
           value: "--no-supervisor -q"
