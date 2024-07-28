@@ -31,6 +31,6 @@ spec:
     spec:
       containers:
         - name: webui
-          image: frankawesome/simple-angular-app:latest
+          image: frankawesome/ui-llm-1:latest
           ports:
             - containerPort: 4000
