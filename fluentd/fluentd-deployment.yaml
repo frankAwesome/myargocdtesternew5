@@ -46,7 +46,6 @@ spec:
       labels:
         name: fluentd
     spec:
-      serviceAccountName: fluentd
       containers:
       - name: fluentd
         image: fluent/fluentd:latest
