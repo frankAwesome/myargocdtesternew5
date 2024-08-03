@@ -9,8 +9,6 @@ spec:
   ports:
     - port: 5000
       targetPort: 5000
-    - port: 8000
-      targetPort: 8000
   selector:
     app: app-rest
 ---
@@ -35,7 +33,6 @@ spec:
           image: frankawesome/rest-llm-8:latest
           ports:
             - containerPort: 5000
-            - containerPort: 8000
           env:
             - name: RABBITIP
               value: "rabbitmq"
