@@ -41,5 +41,5 @@ spec:
               value: "ollama"
             - name: KAFKAIP
               value: "kafka"
-            - name: FLUENTD_HOST
-              value: "fluentd"
+            - name: LOKI_HOST
+              value: "loki"
