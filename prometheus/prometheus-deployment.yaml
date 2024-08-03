@@ -48,18 +48,6 @@ data:
         kubernetes_sd_configs:
           - role: pod
 
-      - job_name: 'rest-service'
-        kubernetes_sd_configs:
-          - role: endpoints
-        relabel_configs:
-          - source_labels: [__meta_kubernetes_service_name]
-            action: keep
-            regex: rest
-        metrics_path: /metrics
-        scheme: http
-        static_configs:
-          - targets: ['rest:8000']
-
       - job_name: 'node-service'
         kubernetes_sd_configs:
           - role: endpoints
