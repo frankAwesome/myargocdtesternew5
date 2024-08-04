@@ -14,17 +14,11 @@ spec:
     - "--cache=true"
     env:
     - name: DESTINATION
-      value: "gcr.io/your-project/your-image:${IMAGE_TAG}"  # Example: use an environment variable for the tag
+      value: "gcr.io/your-project/your-image:${IMAGE_TAG}"  # Example destination
     volumeMounts:
     - name: workspace
       mountPath: /workspace
-    - name: docker-config
-      mountPath: /kaniko/.docker
-      readOnly: true
   restartPolicy: Never
   volumes:
   - name: workspace
     emptyDir: {}
-  - name: docker-config
-    secret:
-      secretName: regcred
